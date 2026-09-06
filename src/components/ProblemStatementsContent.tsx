@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { Search } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
@@ -7,6 +6,7 @@ import ComingSoon from '@/components/ComingSoon';
 const ProblemStatementsContent: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const sectionRef = useRef<HTMLDivElement>(null);
+
   const isInView = useInView(sectionRef, {
     once: true,
     margin: '-80px',
@@ -35,9 +35,7 @@ const ProblemStatementsContent: React.FC = () => {
 
         {/* LEFT CURTAIN */}
         <motion.div
-          className="absolute left-0 top-0 h-full w-1/2
-                     bg-black
-                     border-r border-pink-500/20"
+          className="absolute left-0 top-0 h-full w-1/2 bg-black border-r border-pink-500/20"
           initial={{ x: 0 }}
           animate={{ x: '-100%' }}
           transition={{
@@ -49,9 +47,7 @@ const ProblemStatementsContent: React.FC = () => {
 
         {/* RIGHT CURTAIN */}
         <motion.div
-          className="absolute right-0 top-0 h-full w-1/2
-                     bg-black
-                     border-l border-purple-500/20"
+          className="absolute right-0 top-0 h-full w-1/2 bg-black border-l border-purple-500/20"
           initial={{ x: 0 }}
           animate={{ x: '100%' }}
           transition={{
@@ -81,7 +77,7 @@ const ProblemStatementsContent: React.FC = () => {
 
           <div className="text-center px-6">
 
-            {/* Small Icon */}
+            {/* SMALL ICON */}
             <motion.div
               initial={{
                 opacity: 0,
@@ -97,14 +93,7 @@ const ProblemStatementsContent: React.FC = () => {
               }}
               className="mb-5"
             >
-              <div
-                className="mx-auto w-14 h-14 rounded-full
-                           flex items-center justify-center
-                           bg-gradient-to-br
-                           from-pink-500/20
-                           to-purple-600/20
-                           border border-pink-500/20"
-              >
+              <div className="mx-auto w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-purple-600/20 border border-pink-500/20">
                 <Search
                   className="w-6 h-6 text-pink-400"
                   aria-hidden="true"
@@ -112,7 +101,7 @@ const ProblemStatementsContent: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Title */}
+            {/* TITLE */}
             <motion.h2
               className="text-3xl md:text-5xl font-bold text-white"
               initial={{
@@ -134,12 +123,9 @@ const ProblemStatementsContent: React.FC = () => {
               </span>
             </motion.h2>
 
-            {/* Divider */}
+            {/* DIVIDER */}
             <motion.div
-              className="h-1 w-16 mx-auto mt-5 rounded-full
-                         bg-gradient-to-r
-                         from-pink-500
-                         to-purple-600"
+              className="h-1 w-16 mx-auto mt-5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600"
               initial={{
                 width: 0,
                 opacity: 0,
@@ -154,7 +140,7 @@ const ProblemStatementsContent: React.FC = () => {
               }}
             />
 
-            {/* Loading Text */}
+            {/* LOADING TEXT */}
             <motion.p
               className="text-gray-400 text-sm mt-5"
               initial={{
@@ -174,7 +160,6 @@ const ProblemStatementsContent: React.FC = () => {
           </div>
         </motion.div>
       </motion.div>
-
 
       {/* =====================================================
           MAIN CONTENT
@@ -207,31 +192,22 @@ const ProblemStatementsContent: React.FC = () => {
             Problem Statements
           </h1>
 
-          {/* DIVIDER */}
           <div
             className="section-divider mb-6"
             aria-hidden="true"
           />
 
-          {/* DESCRIPTION */}
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto mb-8">
             Choose from cutting-edge problem statements across various
-            technological domains. Each challenge is designed to push the
-            boundaries of innovation and create real-world impact.
+            technological domains. Each challenge is designed to push
+            the boundaries of innovation and create real-world impact.
           </p>
 
-
-          {/* =================================================
-              SEARCH BAR
-          ================================================== */}
-
+          {/* SEARCH BAR */}
           <div className="relative max-w-lg mx-auto">
 
             <Search
-              className="absolute left-4 top-1/2
-                         -translate-y-1/2
-                         h-4 w-4
-                         text-gray-400"
+              className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400"
               aria-hidden="true"
             />
 
@@ -239,9 +215,7 @@ const ProblemStatementsContent: React.FC = () => {
               type="search"
               placeholder="Search problems or categories…"
               value={searchQuery}
-              onChange={(e) =>
-                setSearchQuery(e.target.value)
-              }
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="
                 w-full
                 pl-11
@@ -266,11 +240,7 @@ const ProblemStatementsContent: React.FC = () => {
           </div>
         </motion.div>
 
-
-        {/* =================================================
-            COMING SOON
-        ================================================== */}
-
+        {/* COMING SOON */}
         <ComingSoon
           title="Coming Soon"
           description="We are curating cutting-edge problem statements across various technological domains. Each challenge is designed to push the boundaries of innovation and create real-world impact. Stay tuned for the full list!"
@@ -283,4 +253,3 @@ const ProblemStatementsContent: React.FC = () => {
 };
 
 export default ProblemStatementsContent;
-
